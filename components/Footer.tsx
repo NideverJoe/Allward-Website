@@ -32,9 +32,6 @@ export default function Footer() {
             <Link href="/what-we-build" className="text-cream/70 hover:text-cream transition-colors text-sm font-medium">
               What We Build
             </Link>
-            <Link href="/#contact" className="text-cream/70 hover:text-cream transition-colors text-sm font-medium">
-              Contact
-            </Link>
           </nav>
         </div>
 

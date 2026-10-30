@@ -28,12 +28,6 @@ export default function Header() {
             <Link href="/what-we-build" className="text-slate hover:text-navy font-medium transition-colors text-sm">
               What We Build
             </Link>
-            <Link
-              href="/#contact"
-              className="bg-teal text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-navy transition-colors"
-            >
-              Contact
-            </Link>
           </nav>
 
           <button
@@ -72,13 +66,6 @@ export default function Header() {
               className="text-slate hover:text-navy font-medium px-3 py-2 rounded-lg hover:bg-cream transition-colors"
             >
               What We Build
-            </Link>
-            <Link
-              href="/#contact"
-              onClick={() => setMenuOpen(false)}
-              className="bg-teal text-white px-5 py-2.5 rounded-lg font-semibold text-center mt-2 hover:bg-navy transition-colors"
-            >
-              Contact
             </Link>
           </nav>
         )}

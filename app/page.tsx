@@ -1,5 +1,3 @@
-import ContactForm from "@/components/ContactForm";
-
 export default function Home() {
   return (
     <>
@@ -14,10 +12,10 @@ export default function Home() {
               ALLWARD Labs builds tools that start with one person who is excluded, and grow into something more people can choose.
             </p>
             <a
-              href="#contact"
+              href="/what-we-build"
               className="inline-block bg-teal text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-navy transition-colors"
             >
-              Get in touch
+              What we build
             </a>
           </div>
         </div>
@@ -81,24 +79,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-16 sm:py-24 px-4 bg-white" aria-labelledby="contact-heading">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div>
-              <h2 id="contact-heading" className="text-2xl sm:text-3xl font-bold text-navy mb-4">
-                Get in touch
-              </h2>
-              <p className="text-slate leading-relaxed max-w-sm">
-                ALLWARD Labs is building products that start with one person and one problem. If that&apos;s the kind of work you want to hear more about, we&apos;d like to talk.
-              </p>
-            </div>
-            <div>
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
