@@ -1,8 +1,13 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState<number | null>(null);
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="bg-navy text-cream/80">
@@ -42,7 +47,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-8 border-t border-cream/10">
           <p className="text-xs text-cream/40">
-            &copy; {year} ALLWARD Labs. All rights reserved.
+            &copy; {year ?? ""} ALLWARD Labs. All rights reserved.
           </p>
         </div>
       </div>
