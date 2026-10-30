@@ -1,14 +1,7 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 export default function Footer() {
-  const [year, setYear] = useState<number | null>(null);
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
-
   return (
     <footer className="bg-navy text-cream/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
@@ -47,7 +40,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-8 border-t border-cream/10">
           <p className="text-xs text-cream/40">
-            &copy; {year ?? ""} ALLWARD Labs. All rights reserved.
+            &copy; 2026 ALLWARD Labs. All rights reserved.
           </p>
         </div>
       </div>
