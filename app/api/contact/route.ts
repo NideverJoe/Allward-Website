@@ -30,8 +30,8 @@ export async function POST(request: NextRequest) {
     await saveContactSubmission({
       name: name.trim(),
       email: email.trim().toLowerCase(),
-      organization: organization?.trim() || null,
-      message: message?.trim() || null,
+      organization: organization?.trim() || undefined,
+      message: message?.trim() || undefined,
     });
   } catch (err) {
     console.error("[contact] storage error:", err);
