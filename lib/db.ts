@@ -1,30 +1,22 @@
-import { createClient } from "@supabase/supabase-js";
-
 export interface ContactSubmission {
   name: string;
   email: string;
-  organization?: string | null;
-  message?: string | null;
+  organization?: string;
+  message?: string;
 }
 
 export async function saveContactSubmission(data: ContactSubmission): Promise<void> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) throw new Error("WEB3FORMS_ACCESS_KEY is not configured.");
 
-  if (!url || !key) {
-    throw new Error("Supabase environment variables are not configured.");
-  }
-
-  const supabase = createClient(url, key);
-
-  const { error } = await supabase.from("contact_submissions").insert({
-    name: data.name,
-    email: data.email,
-    organization: data.organization ?? null,
-    message: data.message ?? null,
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ access_key: accessKey, ...data }),
   });
 
-  if (error) {
-    throw new Error(`Database insert failed: ${error.message}`);
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({})) as { message?: string };
+    throw new Error(body.message ?? "Web3Forms submission failed.");
   }
 }
