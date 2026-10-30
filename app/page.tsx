@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <>
@@ -66,6 +68,13 @@ export default function Home() {
       <section className="py-16 sm:py-24 px-4 bg-navy" aria-labelledby="mission-heading">
         <div className="max-w-6xl mx-auto text-center">
           <div className="max-w-3xl mx-auto">
+            <Image
+              src="/logos/lockup-reversed.svg"
+              alt="ALLWARD Labs"
+              width={200}
+              height={67}
+              className="h-10 w-auto mx-auto mb-10"
+            />
             <h2 id="mission-heading" className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Mission
             </h2>
