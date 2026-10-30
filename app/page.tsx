@@ -73,7 +73,7 @@ export default function Home() {
               alt="ALLWARD Labs"
               width={200}
               height={67}
-              className="h-10 w-auto mx-auto mb-10"
+              className="h-16 w-auto mx-auto mb-10"
             />
             <h2 id="mission-heading" className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Mission

@@ -17,7 +17,7 @@ export default function Footer() {
                 alt="ALLWARD Labs"
                 width={200}
                 height={67}
-                className="h-9 w-auto mb-4"
+                className="h-12 w-auto mb-4"
               />
             </Link>
             <p className="text-sm text-cream/60 max-w-xs leading-relaxed">
